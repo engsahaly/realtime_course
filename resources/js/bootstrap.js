@@ -35,11 +35,23 @@ window.Echo = new Echo({
     enabledTransports: ["ws", "wss"],
 });
 
-window.Echo.channel(`new_user_channel`).listen(
-    ".App\\Events\\NewUserRegisteredEvent",
-    (e) => {
+// PUBLIC CHANNEL
+// window.Echo.channel(`new_user_channel`).listen(
+//     ".App\\Events\\NewUserRegisteredEvent",
+//     (e) => {
+//         console.log(e);
+//         $(".notificationsIcon").load(" .notificationsIcon > *");
+//         $("#notificationsModal").load(" #notificationsModal > *");
+//     }
+// );
+
+// PRIVATE CHANNEL
+window.Echo.private(`new_user_channel`)
+    .listen(".App\\Events\\NewUserRegisteredEvent", (e) => {
         console.log(e);
         $(".notificationsIcon").load(" .notificationsIcon > *");
         $("#notificationsModal").load(" #notificationsModal > *");
-    }
-);
+    })
+    .listen(".App\\Events\\NewUserRegisteredEvent2", (e) => {
+        console.log(e);
+    });

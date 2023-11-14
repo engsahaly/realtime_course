@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Events\NewUserRegisteredEvent;
+use App\Events\NewUserRegisteredEvent2;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\User;
@@ -59,6 +60,7 @@ class RegisteredUserController extends Controller
 
         // BROADCAST EVENT
         NewUserRegisteredEvent::dispatch($user);
+        NewUserRegisteredEvent2::dispatch('Hello from the new evet 22222222');
         // Broadcast(new NewUserRegisteredEvent());
 
         Auth::login($user);
