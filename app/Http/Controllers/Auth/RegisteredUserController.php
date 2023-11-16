@@ -63,6 +63,9 @@ class RegisteredUserController extends Controller
         // NewUserRegisteredEvent2::dispatch('Hello from the new evet 22222222');
         // Broadcast(new NewUserRegisteredEvent());
 
+        // MODEL BROADCASTING
+        // $user->broadcastChannel();
+
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);

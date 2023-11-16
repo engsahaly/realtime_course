@@ -16,12 +16,14 @@ class NewUserRegisteredEvent implements ShouldBroadcast
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $message;
+    public $myUser;
     /**
      * Create a new event instance.
      */
-    public function __construct(public User $user)
+    public function __construct($user)
     {
         $this->message = "New user registered from event called $user->name";
+        $this->myUser = $user;
     }
 
     /**
@@ -35,4 +37,30 @@ class NewUserRegisteredEvent implements ShouldBroadcast
             new Channel('new_user_channel'),
         ];
     }
+
+    // /**
+    //  * The event's broadcast name.
+    //  */
+    // public function broadcastAs(): string
+    // {
+    //     return 'new_user_registered_custom_name';
+    // }
+
+    // /**
+    //  * Get the data to broadcast.
+    //  *
+    //  * @return array<string, mixed>
+    //  */
+    // public function broadcastWith(): array
+    // {
+    //     return ['email' => $this->myUser->email];
+    // }
+
+    /**
+     * Determine if this event should broadcast.
+     */
+    // public function broadcastWhen(): bool
+    // {
+    //     return $this->myUser->name == 'Ahmed';
+    // }
 }

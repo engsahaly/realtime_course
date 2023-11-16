@@ -79,3 +79,13 @@ window.Echo.channel(`new_user_channel`).listen(
 //         console.log("error :");
 //         console.error(error);
 //     });
+
+// MODEL BROADCASTING
+// window.Echo.channel(`new_user_channel_from_model_broadcasting`).listen(
+//     ".UserCreated",
+//     (e) => {
+//         console.log(e);
+//         $(".notificationsIcon").load(" .notificationsIcon > *");
+//         $("#notificationsModal").load(" #notificationsModal > *");
+//     }
+// );
