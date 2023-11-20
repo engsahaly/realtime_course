@@ -1,16 +1,16 @@
-## Starter project for realtime course on Udemy
+## Laravel Realtime Notifications Course Files on Udemy
 
 **Created By :** Mahmoud Anwar
 **Email :** Engsahaly@gmail.com
 
-This is the main readme file for this starter project to use as initial starting point fro realtime course on Udemy
+This is the main readme file for the code used in laravel realtime course on Udemy
 
 ## Installation
 
 To get started, clone this repository.
 
 ```
-git clone https://github.com/engsahaly/starter_project_for_realtime.git
+git clone https://github.com/engsahaly/realtime_course.git
 ```
 
 Next, copy your `.env.example` file as `.env` and configure your Database connection.
