@@ -36,6 +36,14 @@ npm install
 npm run build
 ```
 
+## Make a copy of .env.example
+
+You have to generate .env file from .env.example
+
+```
+cp .env.example .env
+```
+
 ## Generate new application key
 
 You have to generate new application key as below.
