@@ -50,7 +50,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         ##------------------------------------------------------- ADMIN INDEX PAGE
         Route::get('/', AdminHomeController::class)->name('index');
 
-        ##------------------------------------------------------- MARL ALL NOTIFICATIONS AS READ
+        ##------------------------------------------------------- MARK ALL NOTIFICATIONS AS READ
         Route::get('/notification/markasread', function () {
             Auth::guard('admin')->user()->notifications->markAsRead();
         })->name('notifications.read');
